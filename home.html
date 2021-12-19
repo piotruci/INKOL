@@ -1,0 +1,83 @@
+<!doctype html>
+<html class="no-js" lang="" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="utf-8">
+    <title>INKOL</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Piotr Ucieklak, Michał Dutka, Bartosz Brzuś, Kacper Kubit">
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" href="icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/menu_template.css">
+
+    <meta name="theme-color" content="#fafafa">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+
+</head>
+
+<body>
+    <nav>
+        <div id="myNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="overlay-content">
+                <div id="user_info" class="row ml-3">
+
+                    <div class="user-icon"></div>
+                    <!-- <p><i class="fa fa-user-circle" style="font-size: 50px;"></i></p> -->
+                    <div>
+                        <p style="font-size: 12px;" class="ml-3">Dzień dobry</p>
+                        <h4 style="padding-top: 0px;" class="ml-3 font-weight-bold">Kamil Kowalski</h4>
+                    </div>
+
+                </div>
+                <ul class="font-weight-bold mt-3">
+                    <li><a href="#">Aktualności</a></li>
+                    <li><a href="#">Szukaj połączenia</a></li>
+                    <li><a href="#">Mapa</a></li>
+                    <li><a href="#">Przeglądaj rozkład</a></li>
+                    <li><a href="#">Moje bilety</a></li>
+                    <li><a href="#">Moje dane</a></li>
+                    <li><a href="#">Wyloguj</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="nav-btn" onclick="openNav()"></div>
+    </nav>
+    <script>
+        function openNav() {
+            document.getElementById("myNav").style.width = "75%";
+        }
+
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+        }
+    </script>
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+</body>
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+</html>
