@@ -2,196 +2,198 @@
 <html >
 
 <head>
-    <meta charset="utf-8">
-    <title>INKOL</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="Piotr Ucieklak, Michał Dutka, Bartosz Brzuś, Kacper Kubit">
-    <meta property="og:title" content="">
-    <meta property="og:type" content="">
-    <meta property="og:url" content="">
-    <meta property="og:image" content="">
+  <meta charset="utf-8">
+  <title>INKOL</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Piotr Ucieklak, Michał Dutka, Bartosz Brzuś, Kacper Kubit">
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
 
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="apple-touch-icon" href="icon.png">
-    <!-- Place favicon.ico in the root directory -->
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
 
 
-    <link rel="stylesheet" href="css/search_connection_form.css">
+  <link rel="stylesheet" href="css/search_connection_form.css">
 
-    <meta name="theme-color" content="#fafafa">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+  <meta name="theme-color" content="#fafafa">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
 
 </head>
 
 <body>
 <nav>
-    <div id="myNav" class="overlay">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <div class="overlay-content">
-            <div id="user_info" class="row ml-3">
+  <div id="myNav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="overlay-content">
+      <div id="user_info" class="row ml-3">
 
-                <div class="user-icon"></div>
-                <!-- <p><i class="fa fa-user-circle" style="font-size: 50px;"></i></p> -->
-                <div>
-                    <p style="font-size: 12px;" class="ml-3">Dzień dobry</p>
-                    <h4 style="padding-top: 0px;" class="ml-3 font-weight-bold">Kamil Kowalski</h4>
-                </div>
-
-            </div>
-            <ul class="font-weight-bold mt-3">
-                <li><a href="#">Aktualności</a></li>
-                <li><a href="#">Szukaj połączenia</a></li>
-                <li><a href="#">Mapa</a></li>
-                <li><a href="#">Przeglądaj rozkład</a></li>
-                <li><a href="#">Moje bilety</a></li>
-                <li><a href="#">Moje dane</a></li>
-                <li><a href="#">Wyloguj</a></li>
-            </ul>
+        <div class="user-icon"></div>
+        <!-- <p><i class="fa fa-user-circle" style="font-size: 50px;"></i></p> -->
+        <div>
+          <p style="font-size: 12px;" class="ml-3">Dzień dobry</p>
+          <h4 style="padding-top: 0px;" class="ml-3 font-weight-bold">Kamil Kowalski</h4>
         </div>
-    </div>
 
-    <div class="nav-btn" onclick="openNav()" style="float: left;"></div>
-    <div id="title-question" style="display: inline-block;">
-        <p id="proposition-text" style="padding-top: 10%;padding-bottom: 0px; font-size: 13px; color: #999999">Dzień Dobry</p>
-        <h4 id="nav-title" class="font-weight-bold my-0">Gdzie jedziesz?</h4>
-        <p id="date-text" style="padding-top: 10%; font-size: 13px; color: #999999;padding-top: 0px"></p>
+      </div>
+      <ul class="font-weight-bold mt-3">
+        <li><a href="#">Aktualności</a></li>
+        <li><a href="#">Szukaj połączenia</a></li>
+        <li><a href="#">Mapa</a></li>
+        <li><a href="#">Przeglądaj rozkład</a></li>
+        <li><a href="#">Moje bilety</a></li>
+        <li><a href="#">Moje dane</a></li>
+        <li><a href="#">Wyloguj</a></li>
+      </ul>
     </div>
+  </div>
+
+  <div class="nav-btn" onclick="openNav()" style="float: left;"></div>
+  <div id="title-question" style="display: inline-block;">
+    <p id="proposition-text" style="padding-top: 10%;padding-bottom: 0px; font-size: 13px; color: #999999">Dzień Dobry</p>
+    <h4 id="nav-title" class="font-weight-bold my-0">Gdzie jedziesz?</h4>
+    <p id="date-text" style="padding-top: 10%; font-size: 13px; color: #999999;padding-top: 0px"></p>
+  </div>
 </nav>
 <main class="mt-5">
-    <div id="connection_form" style="width:90%;margin: auto;">
-        <div class="row">
-            <div class="form-group col-12">
-                <input type="text" class="form-control" id="inputstart" placeholder="Stacja początkowa">
-            </div>
-            <div class="form-group col-12">
-                <input type="text" class="form-control" id="inputdestination" placeholder="Stacja końcowa">
-            </div>
-        </div>
-
-        <div class="row" >
-            <div class="form-group col-6">
-
-                <input type="date" class="form-control" id="inputdate" placeholder="DD MM RRR">
-            </div>
-            <div class="form-group col-6">
-
-                <input type="time" class="form-control" id="inputtime" placeholder="HH:MM">
-            </div>
-            <div class="form-group col-6">
-
-
-            </div>
-
-        </div>
-        <div class="form-group col-8 row" style="margin-left: auto">
-            <label class="switch">
-                <input type="checkbox">
-                <span class="slider round"></span>
-            </label>
-            <p class="mt-2 ml-3 font-weight-bold" style="color:rgb(43, 87, 154)">Bez przesiadek</p>
-        </div>
-        <button  onclick="search_connections()" class="mt-3 btn mx-auto col-12 font-weight-bold" style="color: white;background-color: rgb(43, 87, 154);border-radius: 15px;">Szukaj połączeń</button>
-<!--        <a href="buyTicket.html"><button  class="mt-3 btn mx-auto col-12 font-weight-bold" style="color: white;background-color: rgb(43, 87, 154);border-radius: 15px;">Szukaj połączeń</button></a>-->
-
+  <div id="connection_form" style="width:90%;margin: auto;">
+    <div class="row">
+      <div class="form-group col-12">
+        <input type="text" class="form-control" id="inputstart" placeholder="Stacja początkowa">
+      </div>
+      <div class="form-group col-12">
+        <input type="text" class="form-control" id="inputdestination" placeholder="Stacja końcowa">
+      </div>
     </div>
 
-    <div id="avaliable_connections" class="mt-5" >
+    <div class="row" >
+      <div class="form-group col-6">
 
-        <div id="connection_card" class="row mx-auto col-10 mt-3" onclick="buy_ticket(this)" style="box-shadow: 0 0 10px 0;border-radius: 15px;background-color: white;">
-            <div class="col-7 p-2 mt-3" >
-                <div class="start-point font-weight-bold row">
-                    <p style="margin-left: 5%;margin-right: 3%;color: rgb(43, 87, 154);text-align: center">&#8226; </p>
-                </div>
-                <div class="destination-point font-weight-bold row">
-                    <p style="margin-left: 5%;margin-right: 3%;color: rgb(43, 87, 154);text-align: center">&#8226; </p>
-                </div></div>
-            <div class="col-5 mt-4">
+        <input type="date" class="form-control" id="inputdate" placeholder="DD MM RRR">
+      </div>
+      <div class="form-group col-6">
 
-                <p class="start-point-time font-weight-bold"></p>
+        <input type="time" class="form-control" id="inputtime" placeholder="HH:MM">
+      </div>
+      <div class="form-group col-6">
 
-                <p class="destination-point-time font-weight-bold"></p>
-            </div>
-        </div>
+
+      </div>
 
     </div>
+    <div class="form-group col-8 row" style="margin-left: auto">
+      <label class="switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+      </label>
+      <p class="mt-2 ml-3 font-weight-bold" style="color:rgb(43, 87, 154)">Bez przesiadek</p>
+    </div>
+    <button  onclick="search_connections()" class="mt-3 btn mx-auto col-12 font-weight-bold" style="color: white;background-color: rgb(43, 87, 154);border-radius: 15px;">Szukaj połączeń</button>
+    <!--        <a href="buyTicket.html"><button  class="mt-3 btn mx-auto col-12 font-weight-bold" style="color: white;background-color: rgb(43, 87, 154);border-radius: 15px;">Szukaj połączeń</button></a>-->
+
+  </div>
+
+  <div id="avaliable_connections" class="mt-5" >
+
+    <div id="connection_card" class="row mx-auto col-10 mt-3" onclick="buy_ticket(this)" style="box-shadow: 0 0 10px 0;border-radius: 15px;background-color: white;">
+      <div class="col-7 p-2 mt-3" >
+        <div class="start-point font-weight-bold row">
+          <p style="margin-left: 5%;margin-right: 3%;color: rgb(43, 87, 154);text-align: center">&#8226; </p>
+        </div>
+        <div class="destination-point font-weight-bold row">
+          <p style="margin-left: 5%;margin-right: 3%;color: rgb(43, 87, 154);text-align: center">&#8226; </p>
+        </div></div>
+      <div class="col-5 mt-4">
+
+        <p class="start-point-time font-weight-bold"></p>
+
+        <p class="destination-point-time font-weight-bold"></p>
+      </div>
+    </div>
+
+  </div>
 </main>
 <script>
-    document.getElementById('avaliable_connections').hidden=true;
-    document.getElementById('connection_card').hidden=true;
-    document.cookie="";
-    function buy_ticket(elem){
-        document.cookie="index="+elem.id.charAt(elem.id.length-1)+";";
+  document.getElementById('avaliable_connections').hidden=true;
+  document.getElementById('connection_card').hidden=true;
+  document.cookie="";
+  function buy_ticket(elem){
+    document.cookie="index="+elem.id.charAt(elem.id.length-1)+";";
 
-    }
-    function search_connections(){
-        console.log("HELLO");
-        var con;
-        fetch('./connections.json')
-            .then(response => response.json())
-            .then(async jsonResponse => {
-                let title_nav = document.getElementById('nav-title');
+      location.href = "/buyTicket.html";
 
-                if ((document.getElementById('inputstart').value.length != 0) && (document.getElementById('inputdestination').value.length != 0) && (document.getElementById('inputdate').value.length != 0) && (document.getElementById('inputtime').value.length != 0)) {
-                    title_nav.innerText = document.getElementById('inputstart').value + '->' + document.getElementById('inputdestination').value;
-                    document.getElementById('proposition-text').innerText = "Oto proponowane połączenia";
-                    document.getElementById('date-text').innerText = document.getElementById('inputdate').value + " " + document.getElementById('inputtime').value;
-                    document.getElementById('avaliable_connections').hidden = false;
-                    document.getElementById('connection_form').hidden = true;
-                    for (var x = 0; x < jsonResponse['connections'].length; x++) {
-                        console.log(jsonResponse['connections'][x]['start']);
-                        console.log(document.getElementById('inputdate').value +" "+ jsonResponse['connections'][x]['date'] );
-                        if ((document.getElementById('inputstart').value == jsonResponse['connections'][x]['start']) && (document.getElementById('inputdestination').value == jsonResponse['connections'][x]['destination']) &&(document.getElementById('inputdate').value == jsonResponse['connections'][x]['date'] )) {
+  }
+  function search_connections(){
+    console.log("HELLO");
+    var con;
+    fetch('./connections.json')
+      .then(response => response.json())
+      .then(async jsonResponse => {
+        let title_nav = document.getElementById('nav-title');
 
-                            var new_card = document.getElementById('connection_card').cloneNode(true);
-                            new_card.setAttribute("id", "connection_card_" + x);
+        if ((document.getElementById('inputstart').value.length != 0) && (document.getElementById('inputdestination').value.length != 0) && (document.getElementById('inputdate').value.length != 0) && (document.getElementById('inputtime').value.length != 0)) {
+          title_nav.innerText = document.getElementById('inputstart').value + '->' + document.getElementById('inputdestination').value;
+          document.getElementById('proposition-text').innerText = "Oto proponowane połączenia";
+          document.getElementById('date-text').innerText = document.getElementById('inputdate').value + " " + document.getElementById('inputtime').value;
+          document.getElementById('avaliable_connections').hidden = false;
+          document.getElementById('connection_form').hidden = true;
+          for (var x = 0; x < jsonResponse['connections'].length; x++) {
+            console.log(jsonResponse['connections'][x]['start']);
+            console.log(document.getElementById('inputdate').value +" "+ jsonResponse['connections'][x]['date'] );
+            if ((document.getElementById('inputstart').value == jsonResponse['connections'][x]['start']) && (document.getElementById('inputdestination').value == jsonResponse['connections'][x]['destination']) &&(document.getElementById('inputdate').value == jsonResponse['connections'][x]['date'] )) {
 
-                            async function sleepUntil(f, timeoutMs) {
-                                return new Promise((resolve, reject) => {
-                                    let timeWas = new Date();
-                                    let wait = setInterval(function () {
-                                        if (f()) {
-                                            console.log("resolved after", new Date() - timeWas, "ms");
-                                            clearInterval(wait);
-                                            resolve();
-                                        } else if (new Date() - timeWas > timeoutMs) { // Timeout
-                                            console.log("rejected after", new Date() - timeWas, "ms");
-                                            clearInterval(wait);
-                                            reject();
-                                        }
-                                    }, 0);
-                                });
-                            }
+              var new_card = document.getElementById('connection_card').cloneNode(true);
+              new_card.setAttribute("id", "connection_card_" + x);
 
-
-                            await sleepUntil(() => document.getElementById('avaliable_connections').appendChild(new_card), 5000);
-                            document.getElementById('connection_card_'+x).hidden=false;
-                            var temp=document.getElementById('connection_card_'+x);
-                            console.log(temp);
-                            temp.getElementsByClassName('start-point')[0].appendChild(document.createElement("P").appendChild(document.createTextNode(jsonResponse['connections'][x]['start'] )));
-                            temp.getElementsByClassName('destination-point')[0].appendChild(document.createElement("P").appendChild(document.createTextNode(jsonResponse['connections'][x]['destination'])));
-                            temp.getElementsByClassName('start-point-time')[0].appendChild(document.createElement("p").appendChild(document.createTextNode(jsonResponse['connections'][x]['start_time'])));
-                            temp.getElementsByClassName('destination-point-time')[0].appendChild(document.createElement("p").appendChild(document.createTextNode(jsonResponse['connections'][x]['destination_time'])));
-
-                        } else {
-                            console.log('shit');
-                        }
+              async function sleepUntil(f, timeoutMs) {
+                return new Promise((resolve, reject) => {
+                  let timeWas = new Date();
+                  let wait = setInterval(function () {
+                    if (f()) {
+                      console.log("resolved after", new Date() - timeWas, "ms");
+                      clearInterval(wait);
+                      resolve();
+                    } else if (new Date() - timeWas > timeoutMs) { // Timeout
+                      console.log("rejected after", new Date() - timeWas, "ms");
+                      clearInterval(wait);
+                      reject();
                     }
-                }
-            })
-        // outputs a javascript object from the parsed json
-    }
-    function openNav() {
-        document.getElementById("myNav").style.width = "80%";
-        console.log(document.getElementById('connection_card_0'));
-    }
+                  }, 0);
+                });
+              }
 
-    function closeNav() {
-        document.getElementById("myNav").style.width = "0%";
-    }
+
+              await sleepUntil(() => document.getElementById('avaliable_connections').appendChild(new_card), 5000);
+              document.getElementById('connection_card_'+x).hidden=false;
+              var temp=document.getElementById('connection_card_'+x);
+              console.log(temp);
+              temp.getElementsByClassName('start-point')[0].appendChild(document.createElement("P").appendChild(document.createTextNode(jsonResponse['connections'][x]['start'] )));
+              temp.getElementsByClassName('destination-point')[0].appendChild(document.createElement("P").appendChild(document.createTextNode(jsonResponse['connections'][x]['destination'])));
+              temp.getElementsByClassName('start-point-time')[0].appendChild(document.createElement("p").appendChild(document.createTextNode(jsonResponse['connections'][x]['start_time'])));
+              temp.getElementsByClassName('destination-point-time')[0].appendChild(document.createElement("p").appendChild(document.createTextNode(jsonResponse['connections'][x]['destination_time'])));
+
+            } else {
+              console.log('shit');
+            }
+          }
+        }
+      })
+    // outputs a javascript object from the parsed json
+  }
+  function openNav() {
+    document.getElementById("myNav").style.width = "80%";
+    console.log(document.getElementById('connection_card_0'));
+  }
+
+  function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+  }
 </script>
 
 
