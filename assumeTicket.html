@@ -1,0 +1,250 @@
+<!doctype html>
+<html class="no-js" lang="" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="utf-8">
+    <title>INKOL</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Piotr Ucieklak, Michał Dutka, Bartosz Brzuś, Kacper Kubit">
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" href="icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/menu_template.css">
+
+    <meta name="theme-color" content="#fafafa">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+    <style>
+        body {
+            background-image: url('img/background-image2.png');
+            font-size: 18px;
+        }
+
+        nav {
+            display: block;
+            width: 100vw;
+        }
+
+        #menu_button {
+            width: 25vw;
+            float: left;
+        }
+
+        #train_info_top {
+            width: 75vw;
+            float: left;
+            min-height: 108px;
+            padding-top: 20px;
+            color: white;
+            font-size: 20px;
+        }
+
+        #train_info_top p {
+            margin: 2px;
+        }
+
+        #header {
+            min-height: 200px;
+        }
+
+        #ticket_main_info {
+            min-height: 300px;
+            border: 1px solid blue;
+            border-radius: 15px;
+            background-color: white;
+            margin: 20px;
+            padding: 5px;
+            display: block;
+        }
+
+        .ticket_main_info_road {
+            min-height: 300px;
+            display: block;
+            padding: 0;
+        }
+
+        .row {
+            min-height: 40px;
+        }
+
+        .container {
+            font-size: 15px;
+            padding: 5px;
+        }
+
+        #assume {
+            padding-left: 20px;
+        }
+
+        #assume p {
+            margin: 0;
+            padding: 0;
+        }
+
+        #assume_text {
+            font-weight: bold;
+            font-size: 22px;
+        }
+
+        .form-check-input {
+            width: 18px;
+            height: 18px;
+        }
+
+        #ticket_pay_method {
+            min-height: 100px;
+            border: 1px solid blue;
+            border-radius: 15px;
+            background-color: white;
+            margin: 20px;
+            display: block;
+        }
+
+        #ticket_pay_method p {
+            margin-left: 40px;
+            font-weight: bold;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        #train_info_assume p {
+            font-weight: bold;
+            font-size: 20px;
+            padding-bottom: 0px;
+            margin-bottom: 3px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav id="header">
+        <div id="myNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="overlay-content">
+                <div id="user_info" class="row ml-3">
+
+                    <div class="user-icon"></div>
+                    <!-- <p><i class="fa fa-user-circle" style="font-size: 50px;"></i></p> -->
+                    <div>
+                        <p style="font-size: 12px;" class="ml-3">Dzień dobry</p>
+                        <h4 style="padding-top: 0px;" class="ml-3 font-weight-bold">Kamil Kowalski</h4>
+                    </div>
+
+                </div>
+                <ul class="font-weight-bold mt-3">
+                    <li><a href="#">Aktualności</a></li>
+                    <li><a href="search_connection_form.html">Szukaj połączenia</a></li>
+                    <li><a href="#">Mapa</a></li>
+                    <li><a href="#">Przeglądaj rozkład</a></li>
+                    <li><a href="#">Moje bilety</a></li>
+                    <li><a href="edit_profile.html">Moje dane</a></li>
+                    <li><a href="#">Wyloguj</a></li>
+
+                </ul>
+            </div>
+        </div>
+        <div id="menu_button">
+            <div class="nav-btn" onclick="openNav()"></div>
+        </div>
+        <div id="train_info_top">
+            <p>Wybrane połączenie:</p>
+            <p class="font-weight-bold">Kraków Główny -> Katowice</p>
+            <p>26 Oct 2020 10:00 - 11:27</p>
+        </div>
+    </nav>
+    <div id="assume">
+        <p><small>Sprawdź czy wszystko sie zgadza</small></p>
+        <p id="assume_text">Podsumowanie</p>
+    </div>
+    <div id="ticket_main_info" class="align-self-center">
+        <div class="ticket_main_info_road container">
+            <div id="train_info_assume">
+                <small>Połączenie:</small>
+                <p>Kraków Główny -> Katowice</p>
+                <p>26 Oct 2021</p>
+                <div class="row">
+                    <div class="col">
+                        <small>Odjazd</small>
+                        <p>10:00</p>
+                        <small>Peron 8 Tor 3</small>
+                    </div>
+                    <div class="col">
+                        <small>Numer pociągu</small>
+                        PR 34802
+                    </div>
+                    <div class="col">
+                        <small>Przyjazd</small>
+                        <p>11:27</p>
+                        <small>Peron 3 Tor 8</small>
+                    </div>
+                </div>
+
+                <div id="user_info_assume">
+                    <small>Pasażer</small>
+                    <p>Marek Nowak</p>
+                    51% student
+                    PRZEJAZD TAM
+                </div>
+
+                <div id="assume_price" class="float-right">
+                    <small>Cena biletu</small>
+                    <p>6,37 PLN</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="ticket_pay_method" class="align-self-center">
+        <p><small>Wybierz metodę płatności</small></p>
+        <p><input class="form-check-input" type="radio" value="">
+            Płatność kartą</p>
+        <p><input class="form-check-input" type="radio" value="">
+            BLIK</p>
+    </div>
+
+    <div id="icons_bottom" class="d-flex justify-content-around">
+        <a href="chooseOffer.html"> <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="blue"
+                class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+                <path
+                    d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z" />
+            </svg></a>
+        <a href="ticketBought.html" class="btn btn-primary btn-lg active" role="button">Kup bilet</a>
+    </div>
+
+    <script>
+        function openNav() {
+            document.getElementById("myNav").style.width = "75%";
+        }
+
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+        }
+    </script>
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+</body>
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+</html>

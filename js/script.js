@@ -6,6 +6,6 @@ document.addEventListener('DOMContentLoaded', function () {
 	containerScreen.style.display = 'none';
 
 	window.setTimeout(function () {
-		window.location.replace('./home.html');
+		window.location.replace('./search_connection_form.html');
 	}, 5000);
 });
