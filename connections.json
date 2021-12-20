@@ -1,0 +1,23 @@
+{
+  "name": "inkol_database",
+  "connections": [
+    {
+      "start": "Kraków Główny",
+      "destination": "Kielce",
+      "start_time": "10.25",
+      "destination_time": "13.24"
+    },
+    {
+      "start": "Kraków Główny",
+      "destination": "Kielce",
+      "start_time": "10.45",
+      "destination_time": "13.54"
+    },
+    {
+      "start": "Warszawa",
+      "destination": "Kielce",
+      "start_time": "10.15",
+      "destination_time": "13.14"
+    }
+  ]
+}
