@@ -99,30 +99,37 @@
   </div>
 
   <div id="avaliable_connections" class="mt-5" >
-    <div id="connection_card" class="row mx-auto col-10 mt-3"  style="box-shadow: 0 0 10px 0;border-radius: 15px;background-color: white;">
+
+    <div id="connection_card" class="row mx-auto col-10 mt-3" onclick="buy_ticket(this)" style="box-shadow: 0 0 10px 0;border-radius: 15px;background-color: white;">
       <div class="col-7 p-2 mt-3" >
-        <p class="start-point font-weight-bold">
-          &#8226;
-      </p>
-      <p class="destination-point font-weight-bold">
-         &#8226;
-      </p></div>
-      <div class="col-4 mt-4">
+        <div class="start-point font-weight-bold row">
+          <p style="margin-left: 5%;margin-right: 3%;color: rgb(43, 87, 154);text-align: center">&#8226; </p>
+      </div>
+      <div class="destination-point font-weight-bold row">
+        <p style="margin-left: 5%;margin-right: 3%;color: rgb(43, 87, 154);text-align: center">&#8226; </p>
+      </div></div>
+      <div class="col-5 mt-4">
 
         <p class="start-point-time font-weight-bold"></p>
 
         <p class="destination-point-time font-weight-bold"></p>
       </div>
     </div>
+
   </div>
 </main>
 <script>
   document.getElementById('avaliable_connections').hidden=true;
   document.getElementById('connection_card').hidden=true;
+  document.cookie="";
+  function buy_ticket(elem){
+    document.cookie="index="+elem.id.charAt(elem.id.length-1)+";";
+
+  }
   function search_connections(){
     console.log("HELLO");
     var con;
-    fetch('file.json')
+    fetch('connections.json')
       .then(response => response.json())
       .then(async jsonResponse => {
         let title_nav = document.getElementById('nav-title');
@@ -135,7 +142,8 @@
           document.getElementById('connection_form').hidden = true;
           for (var x = 0; x < jsonResponse['connections'].length; x++) {
             console.log(jsonResponse['connections'][x]['start']);
-            if ((document.getElementById('inputstart').value == jsonResponse['connections'][x]['start']) && (document.getElementById('inputdestination').value == jsonResponse['connections'][x]['destination']) ) {
+            console.log(document.getElementById('inputdate').value +" "+ jsonResponse['connections'][x]['date'] );
+            if ((document.getElementById('inputstart').value == jsonResponse['connections'][x]['start']) && (document.getElementById('inputdestination').value == jsonResponse['connections'][x]['destination']) &&(document.getElementById('inputdate').value == jsonResponse['connections'][x]['date'] )) {
 
               var new_card = document.getElementById('connection_card').cloneNode(true);
               new_card.setAttribute("id", "connection_card_" + x);
@@ -164,8 +172,8 @@
               console.log(temp);
               temp.getElementsByClassName('start-point')[0].appendChild(document.createElement("P").appendChild(document.createTextNode(jsonResponse['connections'][x]['start'] )));
               temp.getElementsByClassName('destination-point')[0].appendChild(document.createElement("P").appendChild(document.createTextNode(jsonResponse['connections'][x]['destination'])));
-              temp.getElementsByClassName('start-point-time')[0].appendChild(document.createElement("h3").appendChild(document.createTextNode(jsonResponse['connections'][x]['start_time'])));
-              temp.getElementsByClassName('destination-point-time')[0].appendChild(document.createElement("h3").appendChild(document.createTextNode(jsonResponse['connections'][x]['destination_time'])));
+              temp.getElementsByClassName('start-point-time')[0].appendChild(document.createElement("p").appendChild(document.createTextNode(jsonResponse['connections'][x]['start_time'])));
+              temp.getElementsByClassName('destination-point-time')[0].appendChild(document.createElement("p").appendChild(document.createTextNode(jsonResponse['connections'][x]['destination_time'])));
 
             } else {
               console.log('shit');
