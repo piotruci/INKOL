@@ -1,5 +1,5 @@
-<!doctype html>
-<html class="no-js" lang="" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<!doctype>
+<html >
 
 <head>
   <meta charset="utf-8">
@@ -16,7 +16,7 @@
   <link rel="apple-touch-icon" href="icon.png">
   <!-- Place favicon.ico in the root directory -->
 
-  <link rel="stylesheet" href="css/normalize.css">
+
   <link rel="stylesheet" href="css/search_connection_form.css">
 
   <meta name="theme-color" content="#fafafa">
@@ -55,30 +55,31 @@
   </div>
 
   <div class="nav-btn" onclick="openNav()" style="float: left;"></div>
-  <div id="title-question">
-    <p style="padding-top: 10%; font-size: 15px;">Dzień Dobry</p>
-    <h4 class="font-weight-bold">Gdzie jedziesz?</h4>
+  <div id="title-question" style="display: inline-block;">
+    <p id="proposition-text" style="padding-top: 10%;padding-bottom: 0px; font-size: 13px; color: #999999">Dzień Dobry</p>
+    <h4 id="nav-title" class="font-weight-bold my-0">Gdzie jedziesz?</h4>
+    <p id="date-text" style="padding-top: 10%; font-size: 13px; color: #999999;padding-top: 0px"></p>
   </div>
 </nav>
 <main class="mt-5">
-  <form style="width:90%;margin: auto;">
-    <div class="form-row">
-      <div class="form-group col-md-12">
-        <input type="email" class="form-control" id="inputstart" placeholder="Stacja początkowa">
+  <div id="connection_form" style="width:90%;margin: auto;">
+    <div class="row">
+      <div class="form-group col-12">
+        <input type="text" class="form-control" id="inputstart" placeholder="Stacja początkowa">
       </div>
-      <div class="form-group col-md-12">
-        <input type="password" class="form-control" id="inputdestination" placeholder="Stacja końcowa">
+      <div class="form-group col-12">
+        <input type="text" class="form-control" id="inputdestination" placeholder="Stacja końcowa">
       </div>
     </div>
 
     <div class="row" >
       <div class="form-group col-6">
 
-        <input type="text" class="form-control" id="inputdate" placeholder="DD MM RRR">
+        <input type="date" class="form-control" id="inputdate" placeholder="DD MM RRR">
       </div>
       <div class="form-group col-6">
 
-        <input type="text" class="form-control" id="inputtime" placeholder="HH:MM">
+        <input type="time" class="form-control" id="inputtime" placeholder="HH:MM">
       </div>
       <div class="form-group col-6">
 
@@ -93,12 +94,90 @@
       </label>
       <p class="mt-2 ml-3 font-weight-bold" style="color:rgb(43, 87, 154)">Bez przesiadek</p>
     </div>
-    <button type="submit" class="mt-3 btn mx-auto col-12 font-weight-bold" style="color: white;background-color: rgb(43, 87, 154);border-radius: 15px;">Sign in</button>
-  </form>
+    <button  onclick="search_connections()" class="mt-3 btn mx-auto col-12 font-weight-bold" style="color: white;background-color: rgb(43, 87, 154);border-radius: 15px;">Szukaj połączeń</button>
+
+  </div>
+
+  <div id="avaliable_connections" class="mt-5" >
+    <div id="connection_card" class="row mx-auto col-10 mt-3"  style="box-shadow: 0 0 10px 0;border-radius: 15px;background-color: white;">
+      <div class="col-7 p-2 mt-3" >
+        <p class="start-point font-weight-bold">
+          &#8226;
+      </p>
+      <p class="destination-point font-weight-bold">
+         &#8226;
+      </p></div>
+      <div class="col-4 mt-4">
+
+        <p class="start-point-time font-weight-bold"></p>
+
+        <p class="destination-point-time font-weight-bold"></p>
+      </div>
+    </div>
+  </div>
 </main>
 <script>
+  document.getElementById('avaliable_connections').hidden=true;
+  document.getElementById('connection_card').hidden=true;
+  function search_connections(){
+    console.log("HELLO");
+    var con;
+    fetch('file.json')
+      .then(response => response.json())
+      .then(async jsonResponse => {
+        let title_nav = document.getElementById('nav-title');
+
+        if ((document.getElementById('inputstart').value.length != 0) && (document.getElementById('inputdestination').value.length != 0) && (document.getElementById('inputdate').value.length != 0) && (document.getElementById('inputtime').value.length != 0)) {
+          title_nav.innerText = document.getElementById('inputstart').value + '->' + document.getElementById('inputdestination').value;
+          document.getElementById('proposition-text').innerText = "Oto proponowane połączenia";
+          document.getElementById('date-text').innerText = document.getElementById('inputdate').value + " " + document.getElementById('inputtime').value;
+          document.getElementById('avaliable_connections').hidden = false;
+          document.getElementById('connection_form').hidden = true;
+          for (var x = 0; x < jsonResponse['connections'].length; x++) {
+            console.log(jsonResponse['connections'][x]['start']);
+            if ((document.getElementById('inputstart').value == jsonResponse['connections'][x]['start']) && (document.getElementById('inputdestination').value == jsonResponse['connections'][x]['destination']) ) {
+
+              var new_card = document.getElementById('connection_card').cloneNode(true);
+              new_card.setAttribute("id", "connection_card_" + x);
+
+              async function sleepUntil(f, timeoutMs) {
+                return new Promise((resolve, reject) => {
+                  let timeWas = new Date();
+                  let wait = setInterval(function () {
+                    if (f()) {
+                      console.log("resolved after", new Date() - timeWas, "ms");
+                      clearInterval(wait);
+                      resolve();
+                    } else if (new Date() - timeWas > timeoutMs) { // Timeout
+                      console.log("rejected after", new Date() - timeWas, "ms");
+                      clearInterval(wait);
+                      reject();
+                    }
+                  }, 0);
+                });
+              }
+
+
+              await sleepUntil(() => document.getElementById('avaliable_connections').appendChild(new_card), 5000);
+              document.getElementById('connection_card_'+x).hidden=false;
+              var temp=document.getElementById('connection_card_'+x);
+              console.log(temp);
+              temp.getElementsByClassName('start-point')[0].appendChild(document.createElement("P").appendChild(document.createTextNode(jsonResponse['connections'][x]['start'] )));
+              temp.getElementsByClassName('destination-point')[0].appendChild(document.createElement("P").appendChild(document.createTextNode(jsonResponse['connections'][x]['destination'])));
+              temp.getElementsByClassName('start-point-time')[0].appendChild(document.createElement("h3").appendChild(document.createTextNode(jsonResponse['connections'][x]['start_time'])));
+              temp.getElementsByClassName('destination-point-time')[0].appendChild(document.createElement("h3").appendChild(document.createTextNode(jsonResponse['connections'][x]['destination_time'])));
+
+            } else {
+              console.log('shit');
+            }
+          }
+        }
+      })
+    // outputs a javascript object from the parsed json
+  }
   function openNav() {
-    document.getElementById("myNav").style.width = "75%";
+    document.getElementById("myNav").style.width = "80%";
+    console.log(document.getElementById('connection_card_0'));
   }
 
   function closeNav() {
