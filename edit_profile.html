@@ -16,8 +16,9 @@
     <link rel="apple-touch-icon" href="icon.png">
     <!-- Place favicon.ico in the root directory -->
 
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/menu_template.css">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/menu_template.css">
+    <link rel="stylesheet" href="./css/edit_profile.css">
 
     <meta name="theme-color" content="#fafafa">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -55,7 +56,55 @@
         </div>
 
         <div class="nav-btn" onclick="openNav()"></div>
+
     </nav>
+
+    <div class="edit-profile-container">
+        <p class="header-text">Moje dane</p>
+        <button type="button" class="btn-save">Zapisz</button>
+        <div class="profile-photo"></div>
+        <p class="full-name" id="fullName">Kamil Kowalski</p>
+
+        <form class="userdata-form">
+            <label>Imię i nazwisko</label><br>
+            <div class="input-shadow">
+                <input type="text" class="input-txt" id="fname" name="fname" placeholder="Imię" value="Kamil"><br>
+                <input type="text" class="input-txt" id="lname" name="lname" placeholder="Nazwisko" value="Kowalski"
+                    style="margin-top: -1px;">
+            </div>
+
+            <label style="margin-top: 10px;">Adres e-mail</label><br>
+            <div class="input-shadow">
+                <input type="email" class="input-txt" id="email" name="email" placeholder="E-mail"
+                    value="kamil.kowalski@onet.pl"><br>
+            </div>
+
+            <label style="margin-top: 10px;">Ulga</label><br>
+            <div class="input-shadow">
+                <select id="discount" name="discount" class="input-txt" form="discountform">
+                    <option value="teacher">33% Nauczyciel szkolny lub akademicki</option>
+                    <option value="student">51% Student / Doktorant</option>
+                    <option value="veteran">37% Weteran</option>
+                    <option value="kids">37% Dzieci / Uczniowie</option>
+                </select><br>
+            </div>
+
+            <label style="margin-top: 10px;">Data urodzenia</label><br>
+            <div class="input-shadow">
+                <input type="date" class="input-txt" id="birthdayDate" name="birthdayDate"><br>
+            </div>
+
+        </form>
+    </div>
+
+
+
+
+
+
+
+
+
     <script>
         function openNav() {
             document.getElementById("myNav").style.width = "75%";
@@ -64,6 +113,7 @@
         function closeNav() {
             document.getElementById("myNav").style.width = "0%";
         }
+        document.getElementById("birthdayDate").defaultValue = "1988-08-17";
     </script>
 
 
