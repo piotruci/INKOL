@@ -29,7 +29,6 @@
             background-image: url('img/background-image2.png');
             font-size: 18px;
         }
-
         nav {
             display: block;
             width: 100vw;
@@ -39,48 +38,24 @@
             width: 25vw;
             float: left;
         }
-
-        #train_info_top {
-            width: 75vw;
-            float: left;
-            min-height: 108px;
-            padding-top: 20px;
-            color: white;
-            font-size: 20px;
-        }
-
-        #train_info_top p {
-            margin: 2px;
-        }
-
         #header {
             min-height: 200px;
         }
-
-        #ticket_main_info {
+        #title {
+            width: 75vw;
+            float: left;
+            min-height: 108px;
+            padding-top: 50px;
+            padding-left: 20px;
+            color: white;
+            font-size: 30px;
+        }
+        #map_content {
             min-height: 500px;
+            border-radius: 15px;
+            background-color: white;
             margin: 20px;
-            padding: 20px;
             display: block;
-        }
-
-        #ticket_main_info p {
-            padding: 0;
-            margin: 0;
-        }
-
-        #info_panel_top {
-            font-size: 20px;
-            font-weight: bold;
-            padding-bottom: 20px;
-        }
-
-        #ulga {
-            padding: 0;
-        }
-
-        #user_data {
-            padding-top: 20px;
         }
     </style>
 
@@ -109,70 +84,24 @@
                     <li><a href="myTickets.html">Moje bilety</a></li>
                     <li><a href="edit_profile.html">Moje dane</a></li>
                     <li><a href="logout.html">Wyloguj</a></li>
-                </ul>
+                  </ul>
             </div>
         </div>
         <div id="menu_button">
             <div class="nav-btn" onclick="openNav()"></div>
         </div>
-        <div id="train_info_top">
-            <p>Wybrane połączenie:</p>
-            <p class="font-weight-bold">Kraków Główny -> Katowice</p>
-            <p>26 Oct 2020 10:00 - 11:27</p>
+        <div id="title">
+            <p class="font-weight-bold">Mapa</p>
         </div>
     </nav>
-    <div id="ticket_main_info" class="align-self-center">
-        <div>
-            <div id="info_panel_top">
-                <p><small>No to zaczynamy!</small></p>
-                <p>Podaj dane pasażera</p>
-            </div>
-            <form>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck">
-                    <label class="form-check-label" for="defaultCheck">
-                        <p>Ja będe podróżował</p>
-                    </label>
-                </div>
-                <div id="user_data">
-                    <div class="form-check">
-                        <label class="form-check-label">
-                            <p>Imie i nazwisko</p>
-                        </label>
-                    </div>
-                    <div class="form-group">
-                        <input type="name" class="form-control" id="exampleInputName1" placeholder="Imie">
-                    </div>
-                    <div class="form-group">
-                        <input type="surname" class="form-control" id="exampleInputSurname" placeholder="Nazwisko">
-                    </div>
-                </div>
-                <div class="form-check">
-                    <label class="form-check-label">
-                        <p>Ulga</p>
-                    </label>
-                </div>
-                <div class="form-check" id="ulga">
-                    <select class="custom-select">
-                        <option selected>Wybierz ulgę</option>
-                        <option value="1">Studencka -51%</option>
-                        <option value="2">Młodzieżowa -30%</option>
-                        <option value="3">Seniorska -70%</option>
-                        <option value="4">Ujotowska -99%</option>
-                    </select>
-                </div>
-            </form>
-        </div>
+    <div id="map_content" class="align-self-center">
+        <img src="./img/map.png">
     </div>
 
-    <div id="icons_bottom" class="d-flex justify-content-around">
-        <a href="buyTicket.html"> <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="blue"
-                class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
-                <path
-                    d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z" />
-            </svg></a>
-        <a href="chooseOffer.html" class="btn btn-primary btn-lg active" role="button">Dalej</a>
-    </div>
+
+
+
+
 
     <script>
         function openNav() {
@@ -181,6 +110,9 @@
 
         function closeNav() {
             document.getElementById("myNav").style.width = "0%";
+        }
+        function search_connections2() {
+            window.location.replace('./search_connection_form.html');
         }
     </script>
 
