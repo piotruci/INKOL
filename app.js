@@ -188,7 +188,7 @@ const generateField = (wynik) => {
     newP4.innerText = `${endTime}`;
 }
 
-const getDataFromQueryString = () => {
+const getDataFromQueryString = (fileName) => {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const startCity = urlParams.get('startCity');
@@ -198,8 +198,7 @@ const getDataFromQueryString = () => {
     const startStation = urlParams.get('startStation');
     const date = urlParams.get('date');
 
-    console.log(window.location.href);
-    if(String(window.location.href).includes("buyTicket"))
+    if(fileName === "buyTicket")
         fillStations(startCity, endCity);
 
     const parent = document.getElementById('train_info_top');
