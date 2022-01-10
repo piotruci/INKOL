@@ -124,7 +124,7 @@
   "start_time": "08.15",
   "end_time": "12.30",
   "date": "12.01.2022",
-  "stations": [ "Kraków Główny", "", "Warszawa Wschodnia", "Warszawa Centralna"]
+  "stations": [ "Kraków Główny", "Warszawa Wschodnia", "Warszawa Centralna"]
 },{
   "start_city": "Kraków",
   "start_station": "Kraków Główny",
@@ -132,7 +132,7 @@
   "start_time": "11.15",
   "end_time": "15.30",
   "date": "12.01.2022",
-  "stations": [ "Kraków Główny", "", "Warszawa Wschodnia", "Warszawa Centralna"]
+  "stations": [ "Kraków Główny", "Warszawa Wschodnia", "Warszawa Centralna"]
 },{
   "start_city": "Kraków",
   "start_station": "Kraków Główny",
@@ -140,7 +140,7 @@
   "start_time": "19.15",
   "end_time": "23.30",
   "date": "12.01.2022",
-  "stations": [ "Kraków Główny", "", "Warszawa Wschodnia", "Warszawa Centralna"]
+  "stations": [ "Kraków Główny", "Warszawa Wschodnia", "Warszawa Centralna"]
 },{
   "start_city": "Kraków",
   "start_station": "Kraków Główny",
@@ -148,7 +148,7 @@
   "start_time": "08.15",
   "end_time": "12.30",
   "date": "13.01.2022",
-  "stations": [ "Kraków Główny", "", "Warszawa Wschodnia", "Warszawa Centralna"]
+  "stations": [ "Kraków Główny", "Warszawa Wschodnia", "Warszawa Centralna"]
 },{
   "start_city": "Kraków",
   "start_station": "Kraków Główny",
@@ -156,7 +156,7 @@
   "start_time": "11.15",
   "end_time": "15.30",
   "date": "13.01.2022",
-  "stations": [ "Kraków Główny", "", "Warszawa Wschodnia", "Warszawa Centralna"]
+  "stations": [ "Kraków Główny", "Warszawa Wschodnia", "Warszawa Centralna"]
 },{
   "start_city": "Kraków",
   "start_station": "Kraków Główny",
@@ -164,7 +164,7 @@
   "start_time": "19.15",
   "end_time": "23.30",
   "date": "13.01.2022",
-  "stations": [ "Kraków Główny", "", "Warszawa Wschodnia", "Warszawa Centralna"]
+  "stations": [ "Kraków Główny", "Warszawa Wschodnia", "Warszawa Centralna"]
 },
 
 

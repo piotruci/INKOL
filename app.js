@@ -198,7 +198,9 @@ const getDataFromQueryString = () => {
     const startStation = urlParams.get('startStation');
     const date = urlParams.get('date');
 
-    fillStations(startCity, endCity);
+    console.log(window.location.href);
+    if(String(window.location.href).includes("buyTicket"))
+        fillStations(startCity, endCity);
 
     const parent = document.getElementById('train_info_top');
     const direction = parent.getElementsByClassName('pDirection');
@@ -227,6 +229,9 @@ const getDataFromQueryString = () => {
 }
 
 const fillStations = (startCity, endCity) => {
+    let array = [];
+    let array2 = [];
+
     fetch("./connections.json")
     .then(response => {
        return response.json();
@@ -236,8 +241,58 @@ const fillStations = (startCity, endCity) => {
             Object.entries(jsondata).forEach((entry) => {
                 const [key, value] = entry;
                 // console.log(`${key}: ${value}`);
+                Object.entries(value).forEach((entry) => {
+                    const [key2, value2] = entry;
+                    // console.log(`${key2}: ${value2}`);
+                    if(value2 === startCity)
+                        array.push(key)
+                    if(value2 === endCity)
+                        array2.push(key);
+                });
             });
+            // console.log(array);
+            // console.log(array2);
+            const array_intersection = array.filter(function(x) {
+                if(array2.indexOf(x) != -1)
+                    return true;
+                else
+                    return false;
+            });
+
+            // console.log(array_intersection);
+            const wynik = jsondata[array_intersection[0]];
+            generateStation(wynik);
+             
         });
+}
+
+const generateStation = (wynik) => {
+    console.log("dzila");
+    let stations; 
+
+    Object.entries(wynik).forEach(entry => {
+        const [key, value] = entry;
+        // console.log(`${key}: ${value}`);
+        if (key === "stations")
+            stations = value;
+    });
+    // console.log(stations);
+    for (let i = 0; i < stations.length; i++){
+        const newDiv = document.createElement('div');
+        newDiv.className = 'row';
+        document.getElementsByClassName('container')[0].appendChild(newDiv);
+        newDivCol = document.createElement('div');
+        newDivCol.className = 'col-12';
+        newDiv.appendChild(newDivCol);
+        const newSpan = document.createElement('span');
+        newSpan.className = 'dot';
+        newDivCol.appendChild(newSpan);
+        const newI = document.createElement('i');
+        newI.className = 'nameStation';
+        newDivCol.appendChild(newI);
+        newI.innerHTML = stations[i];
+
+    }
 }
 
 const addButtonDalej = () => {
