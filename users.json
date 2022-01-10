@@ -1,0 +1,16 @@
+[{
+    "login":"abc",
+    "password":"123",
+    "imie": "Jan",
+    "nazwisko": "Kowalski",
+    "email":"jan.kowalski@gmail.com",
+    "data_urodzenia": "23.08.1992"
+},
+{
+    "login":"cba",
+    "password":"321",
+    "imie": "Adam",
+    "nazwisko": "Wolski",
+    "email":"adam.wolski@gmail.com",
+    "data_urodzenia": "11.03.1991"
+}]

@@ -124,10 +124,10 @@
             margin-bottom: 3px;
         }
     </style>
-
+    <script src="./app.js" ></script>
 </head>
 
-<body>
+<body onload="getDataFromQueryString()"> 
     <nav id="header">
         <div id="myNav" class="overlay">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -156,10 +156,11 @@
         <div id="menu_button">
             <div class="nav-btn" onclick="openNav()"></div>
         </div>
-        <div id="train_info_top">
+        <div id="train_info_top" >
             <p>Wybrane połączenie:</p>
-            <p class="font-weight-bold">Kraków Główny -> Katowice</p>
-            <p>26 Oct 2020 10:00 - 11:27</p>
+            <p class="font-weight-bold pDirection" ></p>
+            <p class="timeInfo"></p>
+            <p class="tripDate"></p>
         </div>
     </nav>
     <div id="assume">
@@ -167,15 +168,17 @@
         <p id="assume_text">Podsumowanie</p>
     </div>
     <div id="ticket_main_info" class="align-self-center">
+       
         <div class="ticket_main_info_road container">
             <div id="train_info_assume">
+                
                 <small>Połączenie:</small>
-                <p>Kraków Główny -> Katowice</p>
-                <p>26 Oct 2021</p>
+                <p class="directionP"></p>
+                <p id="dateP"></p>
                 <div class="row">
                     <div class="col">
                         <small>Odjazd</small>
-                        <p>10:00</p>
+                        <p id="startTimeP"></p>
                         <small>Peron 8 Tor 3</small>
                     </div>
                     <div class="col">
@@ -184,7 +187,7 @@
                     </div>
                     <div class="col">
                         <small>Przyjazd</small>
-                        <p>11:27</p>
+                        <p id="endTimeP"></p>
                         <small>Peron 3 Tor 8</small>
                     </div>
                 </div>
@@ -192,15 +195,13 @@
                 <div id="user_info_assume">
                     <small>Pasażer</small>
                     <p>Marek Nowak</p>
-                    51% student
-                    PRZEJAZD TAM
                 </div>
 
                 <div id="assume_price" class="float-right">
                     <small>Cena biletu</small>
-                    <p>6,37 PLN</p>
+                    <p id="ticketPriceP"></p>
                 </div>
-
+                
             </div>
         </div>
     </div>
@@ -219,9 +220,12 @@
                 <path
                     d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z" />
             </svg></a>
-        <a href="ticketBought.html" class="btn btn-primary btn-lg active" role="button">Kup bilet</a>
+        <a id="assumeTicketNext" class="btn btn-primary btn-lg active" role="button">Kup bilet</a>
     </div>
 
+    <script type="text/javascript">
+        fillAssumeTicket();
+    </script>
     <script>
         function openNav() {
             document.getElementById("myNav").style.width = "75%";
@@ -233,7 +237,6 @@
     </script>
 
 
-</body>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>

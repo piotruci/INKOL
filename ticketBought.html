@@ -147,7 +147,7 @@
             padding: 5px;
         }
     </style>
-
+    <script src="./app.js" ></script>
 </head>
 
 <body>
@@ -208,8 +208,8 @@
     </div>
     <div id="ticket_main_info" class="align-self-center">
         <div id="info_panel_top">
-            <small>PRZEJAZD TAM</small>
-            <p>Kraków główny -> Katowice</p>
+            <small>Dane:</small>
+            <p id="directionP"></p>
         </div>
         <div id="info_panel_top2">
             <small>Pasażer</small>
@@ -223,12 +223,12 @@
             <div class="row">
                 <div class="col-3">
                     <small>Odjazd</small>
-                    <p>10:00</p>
+                    <p id="startTime"></p>
                     <small>Peron 8 Tor 3</small>
                 </div>
                 <div class="col-3">
                     <small>Przyjazd</small>
-                    <p>11:27</p>
+                    <p id="endTime"></p>
                     <small>Peron 8 Tor 3</small>
                 </div>
                 <div class="col-6 d-flex justify-content-around">
@@ -246,6 +246,10 @@
 
         </div>
     </div>
+
+    <script type="text/javascript">
+        ticketBoughtInfo();
+    </script>
 
     <script>
         function openNav() {
