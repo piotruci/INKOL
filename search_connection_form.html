@@ -12,11 +12,6 @@
   <meta property="og:url" content="">
   <meta property="og:image" content="">
 
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="icon.png">
-  <!-- Place favicon.ico in the root directory -->
-
-
   <link rel="stylesheet" href="css/search_connection_form.css">
 
   <meta name="theme-color" content="#fafafa">
@@ -33,7 +28,31 @@
       background-color: #fff;
       border: 1px solid #ced4da;
     }
+    .label-text {
+      margin-left: 10px;
+    }
+    #message-box {
+      display: block;
+      border-style: solid;
+      border-color: #CCC;
+      border-width: 1px;
+      background-color: #FFEFCB;
+      text-align: center;
+      z-index: 99999;
+      width: 100%;
+      min-height:300px;
+      position: fixed;
+      padding: 15px;
+      top: 100px;
+    }
+    #buttons {
+      margin-top: 15px;
+      margin-left: 10px;
+    }
+   
   </style>
+    <script src="./app.js"></script>
+
 </head>
 
 <body onload="removeCookies()">
@@ -47,19 +66,26 @@
           <!-- <p><i class="fa fa-user-circle" style="font-size: 50px;"></i></p> -->
           <div>
             <p style="font-size: 12px;" class="ml-3">Dzień dobry</p>
-            <h4 style="padding-top: 0px;" class="ml-3 font-weight-bold">Kamil Kowalski</h4>
+            <h4 style="padding-top: 0px;" class="ml-3 font-weight-bold">Marek Nowak</h4>
           </div>
 
         </div>
+        
+
         <ul class="font-weight-bold mt-3">
           <li><a href="news.html">Aktualności</a></li>
           <li><a href="search_connection_form.html">Szukaj połączenia</a></li>
           <li><a href="map.html">Mapa</a></li>
-          <li><a href="browserTimetable.html">Przeglądaj rozkład</a></li>
+          <!-- <li><a href="browserTimetable.html">Przeglądaj rozkład</a></li> -->
           <li><a href="myTickets.html">Moje bilety</a></li>
           <li><a href="edit_profile.html">Moje dane</a></li>
           <li><a href="logout.html">Wyloguj</a></li>
+          <li><a href="help_page.html">Pomoc</a></li> 
         </ul>
+        <div id="buttons" class="d-flex justify-content-around">
+          <a href="logIn.html" class="btn btn-primary btn-md active" role="button">Zaloguj się</a>
+          <a href="register.html" class="btn btn-primary btn-md active" role="button">Zarejestruj się</a>
+        </div>
       </div>
     </div>
 
@@ -72,17 +98,30 @@
     </div>
   </nav>
   <main class="mt-5">
-    <div id="connection_form" style="width:90%;margin: auto;">
+
+    <div id="message-box" onclick="startMessage()" >
+      <p>Witaj użytkowniku!</p>
+      <p>Oto pierwsza wersja naszej aplikacji obługująca podstawowe funkcje</p>
+      <p>Dostępne są połączenia między kilkoma miastami w datach od 12.01.2022 do 14.01.2022</p>
+      <p>Aplikacja posiada jedno konto użytkownika <b>Marek Nowak</b> </p>
+      <p>Życzymy miłego testowania aplikacji!</p>
+      <button type="button">OK, zaczynajmy!</button>
+    </div>
+
+
+    <div id="connection_form" style="width:90%;margin: auto;" >
       <div class="row">
         <!-- <div class="form-group col-12">
           <input type="text" class="form-control" id="inputstart" placeholder="Stacja początkowa" readonly>
         </div> -->
+        <label for="inputstart" class="label-text">Jedziemy z...</label>
         <div class="form-group col-12">
           <input type="text" class="form-control" id="inputstart" value="Kraków" readonly>
         </div>
         <!-- <div class="form-group col-12">
           <input type="text" class="form-control" id="inputdestination" placeholder="Stacja końcowa">
         </div> -->
+        <label for="inputstart" class="label-text">Jedziemy do...</label>
         <select class="form-select form-select-sm mb-3 col-10" id="inputdestination" aria-label=".form-select-sm example">
           <!-- <option selected>Stacja końcowa</option> -->
           <option value="Katowice">Katowice</option>
@@ -94,12 +133,18 @@
 
       <div class="row">
         <div class="form-group col-6">
-
-          <input type="date" class="form-control" id="inputdate" placeholder="DD MM RRR">
+          <label for="inputdate" class="label-text">Data podróży</label>
+          <input type="date" class="form-control" id="inputdate" placeholder="DD MM RRR" required>
+          <!-- <select class="form-select form-select-sm mb-3 col-10" id="inputdate" aria-label=".form-select-sm example">
+            <option selected>Stacja końcowa</option> 
+            <option value="12.01.2022">12.01.2022</option>
+            <option value="13.01.2022">13.01.2022</option>
+            <option value="14.01.2022">14.01.2022</option>
+          </select> -->
         </div>
         <div class="form-group col-6">
-
-          <input type="text" class="form-control" id="inputtime" placeholder="hh.mm">
+          <label for="inputtime" class="label-text">Godzina podróży</label>
+          <input type="text" class="form-control" id="inputtime" placeholder="hh.mm" required>
         </div>
         <div class="form-group col-6">
 
@@ -114,12 +159,11 @@
         </label>
         <p class="mt-2 ml-3 font-weight-bold" style="color:rgb(43, 87, 154)">Bez przesiadek</p>
       </div>
-      <a href="availableConnections.html"><button onclick="search()" class="mt-3 btn mx-auto col-12 font-weight-bold"
-        style="color: white;background-color: rgb(43, 87, 154);border-radius: 15px;">Szukaj połączeń</button></a> 
-        <!-- <button onclick="search()" class="mt-3 btn mx-auto col-12 font-weight-bold"
-          style="color: white;background-color: rgb(43, 87, 154);border-radius: 15px;">Szukaj połączeń</button> -->
+      <!-- <a href="availableConnections.html"><button onclick="search()" class="mt-3 btn mx-auto col-12 font-weight-bold"
+        style="color: white;background-color: rgb(43, 87, 154);border-radius: 15px;">Szukaj połączeń</button></a>  -->
+        <button onclick="search()" class="mt-3 btn mx-auto col-12 font-weight-bold"
+          style="color: white;background-color: rgb(43, 87, 154);border-radius: 15px;">Szukaj połączeń</button>
     </div>
-
     
   </main>
   <script src="./app.js"> </script>

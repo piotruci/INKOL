@@ -1,16 +1,57 @@
+const startMessage = () => {
+    document.getElementById("message-box").style = "display: none";
+}
+
+const validatedata = (date, time) => {
+    // console.log(date, time);
+    let newtime = time
+    let isOk = true;
+    if(date === "" || time === ""){
+        window.alert('Nie wporowadzono poprawnie danych!');
+        isOk = false;
+    }
+    if(time.includes(":")){
+        newtime = time.replace(":", ".");
+    }
+    if(time.includes(";")){
+        newtime = time.replace(";",".");
+    }
+    let checkhour = parseInt(newtime[0] + newtime[1]);
+    // console.log(checkhour);
+    // console.log(typeof checkhour);
+    
+    if(checkhour < 0 || checkhour > 24){
+        window.alert('Wprowadzono niepoprawną godzinę!');
+    }
+    let checkminuutes = parseInt(newtime[3] + newtime[4])
+    console.log(checkminuutes);
+    console.log(typeof checkminuutes);
+    if(checkminuutes < 0 || checkminuutes >= 60){
+        window.alert('Wprowadzono niepoprawną godzinę!');
+    }
+    // console.log(date, newtime);
+
+    return {newtime,isOk}
+}
 
 const search = () => {
-    console.log("dziala");
+    // console.log("dziala");
     const startCity = document.getElementById('inputstart').value;
     const select = document.getElementById('inputdestination');
     const endCity = select.options[select.selectedIndex].value;
     const date = document.getElementById('inputdate').value;
     const time = document.getElementById('inputtime').value;
+    
+    const {newtime,isOk} = validatedata(date, time)
+    // console.log(newtime, isOk);
 
     document.cookie = `startCity=${startCity}`;
     document.cookie = `endCity=${endCity}`;
     document.cookie = `date=${date}`;
-    document.cookie = `time=${time}`;
+    document.cookie = `time=${newtime}`;
+    
+    if(isOk)
+        window.location = 'availableConnections.html'
 }
 
 const removeCookies = () => {
@@ -266,7 +307,7 @@ const fillStations = (startCity, endCity) => {
 }
 
 const generateStation = (wynik) => {
-    console.log("dzila");
+    // console.log("dzila");
     let stations; 
 
     Object.entries(wynik).forEach(entry => {

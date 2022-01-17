@@ -12,10 +12,6 @@
     <meta property="og:url" content="">
     <meta property="og:image" content="">
 
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="apple-touch-icon" href="icon.png">
-    <!-- Place favicon.ico in the root directory -->
-
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/menu_template.css">
 
@@ -51,7 +47,7 @@
             font-size: 30px;
         }
         #news_content {
-            min-height: 500px;
+            max-height: 500px;
             border: 1px solid blue;
             border-radius: 15px;
             background-color: white;
@@ -82,11 +78,16 @@
                     <li><a href="news.html">Aktualności</a></li>
                     <li><a href="search_connection_form.html">Szukaj połączenia</a></li>
                     <li><a href="map.html">Mapa</a></li>
-                    <li><a href="browserTimetable.html">Przeglądaj rozkład</a></li>
+                    <!-- <li><a href="browserTimetable.html">Przeglądaj rozkład</a></li> -->
                     <li><a href="myTickets.html">Moje bilety</a></li>
                     <li><a href="edit_profile.html">Moje dane</a></li>
                     <li><a href="logout.html">Wyloguj</a></li>
+                    <li><a href="help_page.html">Pomoc</a></li> 
                   </ul>
+                  <div id="buttons" class="d-flex justify-content-around">
+                    <a href="logIn.html" class="btn btn-primary btn-md active" role="button">Zaloguj się</a>
+                    <a href="register.html" class="btn btn-primary btn-md active" role="button">Zarejestruj się</a>
+                  </div>
             </div>
         </div>
         <div id="menu_button">
@@ -97,7 +98,13 @@
         </div>
     </nav>
     <div id="news_content" class="align-self-center">
-        <p>brak</p>
+        <p></p>
+        <p></p>
+        <ul>
+            <li><p> 12.01.2022 godz.10.00 </p><p>Remont torów na odcinku Kraków Główny - Kielce. Możliwe opóźnienia</p> </li>
+            <li><p> 11.01.2022 godz.7.21 </p><p>Uszkodzenie wagonu na wysokości Tarnowa w kierunku Rzeszów Główny. Możliwe opóźnienia</p> </li>
+            <li><p> 11.01.2022 godz.6.00 </p><p>Zaśnieżone tory w kierunku Warszawa. Trwają prace mające na celu udrożnienie torów. Możliwe opóźnienia</p> </li>
+        </ul>
     </div>
 
 

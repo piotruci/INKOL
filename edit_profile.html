@@ -12,10 +12,6 @@
     <meta property="og:url" content="">
     <meta property="og:image" content="">
 
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="apple-touch-icon" href="icon.png">
-    <!-- Place favicon.ico in the root directory -->
-
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/menu_template.css">
     <link rel="stylesheet" href="./css/edit_profile.css">
@@ -39,7 +35,7 @@
                     <!-- <p><i class="fa fa-user-circle" style="font-size: 50px;"></i></p> -->
                     <div>
                         <p style="font-size: 12px;" class="ml-3">Dzień dobry</p>
-                        <h4 style="padding-top: 0px;" class="ml-3 font-weight-bold">Kamil Kowalski</h4>
+                        <h4 style="padding-top: 0px;" class="ml-3 font-weight-bold">Marek Nowak</h4>
                     </div>
 
                 </div>
@@ -47,11 +43,16 @@
                     <li><a href="news.html">Aktualności</a></li>
                     <li><a href="search_connection_form.html">Szukaj połączenia</a></li>
                     <li><a href="map.html">Mapa</a></li>
-                    <li><a href="browserTimetable.html">Przeglądaj rozkład</a></li>
+                    <!-- <li><a href="browserTimetable.html">Przeglądaj rozkład</a></li> -->
                     <li><a href="myTickets.html">Moje bilety</a></li>
                     <li><a href="edit_profile.html">Moje dane</a></li>
                     <li><a href="logout.html">Wyloguj</a></li>
-                </ul>
+                    <li><a href="help_page.html">Pomoc</a></li> 
+                  </ul>
+                  <div id="buttons" class="d-flex justify-content-around">
+                    <a href="logIn.html" class="btn btn-primary btn-md active" role="button">Zaloguj się</a>
+                    <a href="register.html" class="btn btn-primary btn-md active" role="button">Zarejestruj się</a>
+                  </div>
             </div>
         </div>
 
@@ -63,20 +64,20 @@
         <p class="header-text">Moje dane</p>
         <button type="button" class="btn-save">Zapisz</button>
         <div class="profile-photo"></div>
-        <p class="full-name" id="fullName">Kamil Kowalski</p>
+        <p class="full-name" id="fullName">Marek Nowak</p>
 
         <form class="userdata-form">
             <label>Imię i nazwisko</label><br>
             <div class="input-shadow">
-                <input type="text" class="input-txt" id="fname" name="fname" placeholder="Imię" value="Kamil"><br>
-                <input type="text" class="input-txt" id="lname" name="lname" placeholder="Nazwisko" value="Kowalski"
+                <input type="text" class="input-txt" id="fname" name="fname" placeholder="Imię" value="Marek"><br>
+                <input type="text" class="input-txt" id="lname" name="lname" placeholder="Nazwisko" value="Nowak"
                     style="margin-top: -1px;">
             </div>
 
             <label style="margin-top: 10px;">Adres e-mail</label><br>
             <div class="input-shadow">
                 <input type="email" class="input-txt" id="email" name="email" placeholder="E-mail"
-                    value="kamil.kowalski@onet.pl"><br>
+                    value="marek.nowak@onet.pl"><br>
             </div>
 
             <label style="margin-top: 10px;">Ulga</label><br>
