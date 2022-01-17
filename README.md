@@ -3,7 +3,7 @@
 
 <h3> Jak uruchomić (jeśli nie widzisz dokładnie to kliknij na zdjęcie)</h3>
 <ol>
-  <li>Kliknąć <b><a href="https://piotruci.github.io/INKOL" target="_blank">TUTAJ</a></b></li>  
+  <li>Otworzyć w nowej karcie <b><a href="https://piotruci.github.io/INKOL" target="_blank">LINK</a></b></li>  
   <li>Nacisnąć prawym przyciskiem myszy w dowolnym miejscu na stronie i wybrać <b>Zbadaj element</b>
   <img src="https://user-images.githubusercontent.com/92596468/149809018-90f11b65-b8ed-4e1c-9aec-c6cefae13204.png" alt="zdjęcie do kroku 2">
   </li>
